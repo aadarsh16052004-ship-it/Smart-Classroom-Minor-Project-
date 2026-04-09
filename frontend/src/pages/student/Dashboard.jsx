@@ -7,14 +7,14 @@ import PageHeader from "../../components/PageHeader";
 import { useAuth } from "../../context/AuthContext";
 
 const navItems = [
-  { path: "/student", label: "Dashboard", icon: "🏠" },
-  { path: "/student/attendance", label: "Attendance", icon: "📋" },
-  { path: "/student/assignments", label: "Assignments", icon: "📝" },
-  { path: "/student/marks", label: "Marks", icon: "📊" },
-  { path: "/student/timetable", label: "Timetable", icon: "🗓️" },
-  { path: "/student/lectures", label: "Lectures", icon: "🎬" },
-  { path: "/student/subjects", label: "Subjects", icon: "📚" },
-  { path: "/student/alerts", label: "Alerts", icon: "🔔" },
+  { path: "/student", label: "Dashboard" },
+  { path: "/student/attendance", label: "Attendance" },
+  { path: "/student/assignments", label: "Assignments" },
+  { path: "/student/marks", label: "Marks" },
+  { path: "/student/timetable", label: "Timetable" },
+  { path: "/student/lectures", label: "Lectures" },
+  { path: "/student/subjects", label: "Subjects" },
+  { path: "/student/alerts", label: "Alerts" },
 ];
 
 export default function StudentDashboard() {
@@ -45,10 +45,10 @@ export default function StudentDashboard() {
         <>
           {/* Stats grid */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 28 }}>
-            <StatCard icon="📚" label="Enrolled Subjects" value={data?.subjects} color="#3b82f6" />
-            <StatCard icon="✅" label="Attendance" value={`${data?.attendancePercentage}%`} color={data?.attendancePercentage >= 75 ? "#10b981" : "#ef4444"} sub={data?.attendancePercentage < 75 ? "⚠️ Below 75% threshold" : "On track"} />
-            <StatCard icon="📝" label="Pending Assignments" value={data?.pendingAssignments} color="#f59e0b" />
-            <StatCard icon="🎯" label="Average Marks" value={`${data?.averageMarks}%`} color="#6366f1" />
+            <StatCard  label="Enrolled Subjects" value={data?.subjects} color="#3b82f6" />
+            <StatCard  label="Attendance" value={`${data?.attendancePercentage}%`} color={data?.attendancePercentage >= 75 ? "#10b981" : "#ef4444"} sub={data?.attendancePercentage < 75 ? "⚠️ Below 75% threshold" : "On track"} />
+            <StatCard  label="Pending Assignments" value={data?.pendingAssignments} color="#f59e0b" />
+            <StatCard  label="Average Marks" value={`${data?.averageMarks}%`} color="#6366f1" />
           </div>
 
           {/* Attendance gauge + Alerts */}
