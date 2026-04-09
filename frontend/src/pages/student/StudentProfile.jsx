@@ -7,16 +7,16 @@ import PageHeader from "../../components/PageHeader";
 import toast from "react-hot-toast";
 
 const navItems = [
-  { path: "/student",              label: "Dashboard",      icon: "🏠" },
-  { path: "/student/attendance",   label: "Attendance",     icon: "📋" },
-  { path: "/student/assignments",  label: "Assignments",    icon: "📝" },
-  { path: "/student/marks",        label: "Marks",          icon: "📊" },
-  { path: "/student/timetable",    label: "Timetable",      icon: "🗓️" },
-  { path: "/student/lectures",     label: "Lectures",       icon: "🎬" },
-  { path: "/student/subjects",     label: "Subjects",       icon: "📚" },
-  { path: "/student/announcements",label: "Announcements",  icon: "📢" },
-  { path: "/student/alerts",       label: "Alerts",         icon: "🔔" },
-  { path: "/student/profile",      label: "Profile",        icon: "👤" },
+  { path: "/student",              label: "Dashboard" },
+  { path: "/student/attendance",   label: "Attendance" },
+  { path: "/student/assignments",  label: "Assignments" },
+  { path: "/student/marks",        label: "Marks" },
+  { path: "/student/timetable",    label: "Timetable" },
+  { path: "/student/lectures",     label: "Lectures" },
+  { path: "/student/subjects",     label: "Subjects"},
+  { path: "/student/announcements",label: "Announcements" },
+  { path: "/student/alerts",       label: "Alerts" },
+  { path: "/student/profile",      label: "Profile"},
 ];
 
 export default function StudentProfile() {
