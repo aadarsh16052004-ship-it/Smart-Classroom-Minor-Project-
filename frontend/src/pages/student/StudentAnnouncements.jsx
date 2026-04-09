@@ -5,16 +5,16 @@ import Layout from "../../components/Layout";
 import PageHeader from "../../components/PageHeader";
 
 const navItems = [
-  { path: "/student",              label: "Dashboard",     icon: "🏠" },
-  { path: "/student/attendance",   label: "Attendance",    icon: "📋" },
-  { path: "/student/assignments",  label: "Assignments",   icon: "📝" },
-  { path: "/student/marks",        label: "Marks",         icon: "📊" },
-  { path: "/student/timetable",    label: "Timetable",     icon: "🗓️" },
-  { path: "/student/lectures",     label: "Lectures",      icon: "🎬" },
-  { path: "/student/subjects",     label: "Subjects",      icon: "📚" },
-  { path: "/student/announcements",label: "Announcements", icon: "📢" },
-  { path: "/student/alerts",       label: "Alerts",        icon: "🔔" },
-  { path: "/student/profile",      label: "Profile",       icon: "👤" },
+  { path: "/student",              label: "Dashboard" },
+  { path: "/student/attendance",   label: "Attendance" },
+  { path: "/student/assignments",  label: "Assignments"},
+  { path: "/student/marks",        label: "Marks"},
+  { path: "/student/timetable",    label: "Timetable" },
+  { path: "/student/lectures",     label: "Lectures" },
+  { path: "/student/subjects",     label: "Subjects" },
+  { path: "/student/announcements",label: "Announcements" },
+  { path: "/student/alerts",       label: "Alerts" },
+  { path: "/student/profile",      label: "Profile" },
 ];
 
 export default function StudentAnnouncements() {
@@ -61,13 +61,13 @@ export default function StudentAnnouncements() {
                   style={{ padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", gap: 14 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(59,130,246,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0, position: "relative" }}>
-                      📢
+                      
                       {!a.isRead && <span style={{ position: "absolute", top: -2, right: -2, width: 8, height: 8, borderRadius: "50%", background: "#3b82f6" }} />}
                     </div>
                     <div>
                       <div style={{ ...text, fontSize: 14, fontWeight: a.isRead ? 500 : 700 }}>{a.title}</div>
                       <div style={{ ...sub, fontSize: 12, marginTop: 3 }}>
-                        📚 {a.subject?.name} · {new Date(a.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                         {a.subject?.name} · {new Date(a.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
                       </div>
                     </div>
                   </div>
