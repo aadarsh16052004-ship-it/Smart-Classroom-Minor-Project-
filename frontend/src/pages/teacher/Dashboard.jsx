@@ -1,46 +1,3 @@
-// import { useEffect, useState } from "react";
-// import api from "../../api/axios";
-// import Layout from "../../components/Layout";
-// import StatCard from "../../components/StatCard";
-// import PageHeader from "../../components/PageHeader";
-// import { useAuth } from "../../context/AuthContext";
-
-// export const teacherNav = [
-//   { path: "/teacher", label: "Dashboard", icon: "🏠" },
-//   { path: "/teacher/subjects", label: "Subjects", icon: "📚" },
-//   { path: "/teacher/students", label: "Students", icon: "👥" },
-//   { path: "/teacher/assignments", label: "Assignments", icon: "📝" },
-//   { path: "/teacher/attendance", label: "Attendance", icon: "📋" },
-//   { path: "/teacher/marks", label: "Enter Marks", icon: "📊" },
-//   { path: "/teacher/lectures", label: "Lectures", icon: "🎬" },
-//   { path: "/teacher/resources", label: "Resources", icon: "🖥️" },
-// ];
-
-// export default function TeacherDashboard() {
-//   const { user } = useAuth();
-//   const [data, setData] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     api.get("/teacher/dashboard").then(r => setData(r.data)).catch(() => {}).finally(() => setLoading(false));
-//   }, []);
-
-//   return (
-//     <Layout navItems={teacherNav}>
-//       <PageHeader title={`Welcome, ${user?.name} 👋`} subtitle="Your teaching overview" />
-//       {loading ? <div style={{ color: "#64748b", textAlign: "center", padding: 60 }}>Loading...</div> : (
-//         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
-//           <StatCard icon="📚" label="Subjects Teaching" value={data?.subjectsTeaching} color="#10b981" />
-//           <StatCard icon="👥" label="Total Students" value={data?.totalStudents} color="#3b82f6" />
-//           <StatCard icon="📝" label="Assignments Issued" value={data?.assignmentsIssued} color="#f59e0b" />
-//           <StatCard icon="📋" label="Attendance Sessions" value={data?.attendanceSessions} color="#6366f1" />
-//         </div>
-//       )}
-//     </Layout>
-//   );
-// }
-
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
@@ -50,16 +7,16 @@ import PageHeader from "../../components/PageHeader";
 import { useAuth } from "../../context/AuthContext";
 
 export const teacherNav = [
-  { path: "/teacher",               label: "Dashboard",     icon: "🏠" },
-  { path: "/teacher/subjects",      label: "Subjects",      icon: "📚" },
-  { path: "/teacher/students",      label: "Students",      icon: "👥" },
-  { path: "/teacher/assignments",   label: "Assignments",   icon: "📝" },
-  { path: "/teacher/attendance",    label: "Attendance",    icon: "📋" },
-  { path: "/teacher/marks",         label: "Enter Marks",   icon: "📊" },
-  { path: "/teacher/lectures",      label: "Lectures",      icon: "🎬" },
-  { path: "/teacher/announcements", label: "Announcements", icon: "📢" },
-  { path: "/teacher/alerts",        label: "Alerts",        icon: "🚨" },
-  { path: "/teacher/resources",     label: "Resources",     icon: "🖥️" },
+  { path: "/teacher",               label: "Dashboard"},
+  { path: "/teacher/subjects",      label: "Subjects" },
+  { path: "/teacher/students",      label: "Students" },
+  { path: "/teacher/assignments",   label: "Assignments" },
+  { path: "/teacher/attendance",    label: "Attendance" },
+  { path: "/teacher/marks",         label: "Enter Marks" },
+  { path: "/teacher/lectures",      label: "Lectures" },
+  { path: "/teacher/announcements", label: "Announcements" },
+  { path: "/teacher/alerts",        label: "Alerts" },
+  { path: "/teacher/resources",     label: "Resources" },
 ];
 
 const card = { background: "rgba(15,23,42,0.9)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: 22 };
@@ -93,12 +50,12 @@ export default function TeacherDashboard() {
 
       {/* Stat grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 14, marginBottom: 24 }}>
-        <StatBox icon="📚" label="Subjects" value={data?.subjectsTeaching} color="#10b981" />
-        <StatBox icon="👥" label="Students" value={data?.totalStudents} color="#3b82f6" />
-        <StatBox icon="📝" label="Assignments" value={data?.assignmentsIssued} color="#f59e0b" />
-        <StatBox icon="⏳" label="Pending Grading" value={data?.pendingGrading} color="#ef4444" sub={data?.pendingGrading > 0 ? "Need your attention" : "All graded ✓"} />
-        <StatBox icon="🎬" label="Lectures" value={data?.lecturesUploaded} color="#6366f1" />
-        <StatBox icon="📢" label="Announcements" value={data?.announcementsCount} color="#ec4899" />
+        <StatBox label="Subjects" value={data?.subjectsTeaching} color="#10b981" />
+        <StatBox label="Students" value={data?.totalStudents} color="#3b82f6" />
+        <StatBox label="Assignments" value={data?.assignmentsIssued} color="#f59e0b" />
+        <StatBox label="Pending Grading" value={data?.pendingGrading} color="#ef4444" sub={data?.pendingGrading > 0 ? "Need your attention" : "All graded ✓"} />
+        <StatBox label="Lectures" value={data?.lecturesUploaded} color="#6366f1" />
+        <StatBox label="Announcements" value={data?.announcementsCount} color="#ec4899" />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, marginBottom: 20 }}>
