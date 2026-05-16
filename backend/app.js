@@ -1,14 +1,3 @@
-// import app from "./app.js";
-// import mongoose from "mongoose";
-
-// mongoose.connect(process.env.MONGO_URI)
-//   .then(() => {
-//     console.log("MongoDB connected");
-//     app.listen(5000, () =>
-//       console.log("Server running on port 5000")
-//     );
-//   })
-//   .catch(err => console.error(err));
 
 import express from "express";
 import cors from "cors";
