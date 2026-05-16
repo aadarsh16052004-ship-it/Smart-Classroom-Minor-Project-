@@ -3,12 +3,6 @@ import { useAuth } from "../context/AuthContext";
 
 const roleAccent = { admin:"#f59e0b", teacher:"#10b981", student:"#4f46e5" };
 
-/* ═══════════════════════════════════════════════════════════
-   RULE-BASED BRAIN
-   Each entry: { match: [keywords], answer: "..." }
-   The engine scores every entry by how many keywords match
-   the user's message, then picks the highest scorer.
-═══════════════════════════════════════════════════════════ */
 const KB = {
   // ── SHARED ──────────────────────────────────────────────
   shared: [
